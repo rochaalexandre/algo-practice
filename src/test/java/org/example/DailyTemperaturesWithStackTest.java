@@ -1,6 +1,6 @@
 package org.example;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -67,24 +67,24 @@ public class DailyTemperaturesWithStackTest {
     @Test
     void findWaitingDays() {
         int[] result = getWaitingDays(new int[] {73, 74, 75, 71, 69, 72, 76, 73});
-        assertArrayEquals(new int[] {1, 1, 4 , 3, 2, 1, 0, 0}, result);
+        assertThat(result).isEqualTo(new int[] {1, 1, 4, 3, 2, 1, 0, 0});
     }
 
     @Test
     void allSameTemperatureNeverWarmsUp() {
         int[] result = getWaitingDays(new int[] {70, 70, 70, 70});
-        assertArrayEquals(new int[] {0, 0, 0, 0}, result);
+        assertThat(result).isEqualTo(new int[] {0, 0, 0, 0});
     }
 
     @Test
     void strictlyDecreasingTemperatureNeverWarmsUp() {
         int[] result = getWaitingDays(new int[] {80, 75, 70, 65, 60});
-        assertArrayEquals(new int[] {0, 0, 0, 0, 0}, result);
+        assertThat(result).isEqualTo(new int[] {0, 0, 0, 0, 0});
     }
 
     @Test
     void stackHoldsSeveralDaysBeforePopping() {
         int[] result = getWaitingDays(new int[] {63, 62, 61, 66, 90});
-        assertArrayEquals(new int[] {3, 2, 1, 1, 0}, result);
+        assertThat(result).isEqualTo(new int[] {3, 2, 1, 1, 0});
     }
 }

@@ -1,6 +1,6 @@
 package org.example;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,31 +49,31 @@ class TwoSumWithHashMapTest {
     @Test
     void firstAndLastElement() {
         int[] result = twoSum(new int[] {2, 11, 15, 7}, 9);
-        assertArrayEquals(new int[] {0, 3}, result);
+        assertThat(result).isEqualTo(new int[] {0, 3});
     }
 
     @Test
     void firstAndSecondElement() {
-        assertArrayEquals(new int[] {0, 1}, twoSum(new int[] {3, 7, 10, 5}, 10));
+        assertThat(twoSum(new int[] {3, 7, 10, 5}, 10)).isEqualTo(new int[] {0, 1});
     }
 
     @Test
     void negativeNumbers() {
-        assertArrayEquals(new int[] {0, 2}, twoSum(new int[] {-3, 1, 3, 5}, 0));
+        assertThat(twoSum(new int[] {-3, 1, 3, 5}, 0)).isEqualTo(new int[] {0, 2});
     }
 
     @Test
     void targetZeroWithTwoZeros() {
-        assertArrayEquals(new int[] {0, 1}, twoSum(new int[] {0, 0, 1}, 0));
+        assertThat(twoSum(new int[] {0, 0, 1}, 0)).isEqualTo(new int[] {0, 1});
     }
 
     @Test
     void noSolutionReturnsEmptyArray() {
-        assertArrayEquals(new int[] {}, twoSum(new int[] {1, 2, 3}, 100));
+        assertThat(twoSum(new int[] {1, 2, 3}, 100)).isEmpty();
     }
 
     @Test
     void lastAndSecondToLastElement() {
-        assertArrayEquals(new int[] {2, 3}, twoSum(new int[] {1, 5, 4, 6}, 10));
+        assertThat(twoSum(new int[] {1, 5, 4, 6}, 10)).isEqualTo(new int[] {2, 3});
     }
 }

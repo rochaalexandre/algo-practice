@@ -11,6 +11,7 @@ Each exercise is a JUnit test class. The class javadoc documents:
 
 - Java
 - JUnit 5
+- AssertJ
 - Gradle (Kotlin DSL)
 
 ## Running the tests

@@ -1,7 +1,6 @@
 package org.example;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -66,36 +65,36 @@ class TwoSumWithTwoPointersTest {
     @Test
     void findNumbersThatSumMatchesTarget() {
         int[] result = twoSum(new int[] {1, 3, 4, 5, 7, 10}, 12);
-        assertArrayEquals(new int[] {5, 7}, result);
+        assertThat(result).isEqualTo(new int[] {5, 7});
     }
 
     @Test
     void firstAndLastElement() {
         int[] result = twoSum(new int[] {1, 2, 3, 4, 9}, 10);
-        assertArrayEquals(new int[] {1, 9}, result);
+        assertThat(result).isEqualTo(new int[] {1, 9});
     }
 
     @Test
     void adjacentElements() {
         int[] result = twoSum(new int[] {1, 2, 3, 4, 8}, 7);
-        assertArrayEquals(new int[] {3, 4}, result);
+        assertThat(result).isEqualTo(new int[] {3, 4});
     }
 
     @Test
     void negativeAndPositiveNumbers() {
         int[] result = twoSum(new int[] {-4, -1, 0, 3, 5}, 1);
-        assertArrayEquals(new int[] {-4, 5}, result);
+        assertThat(result).isEqualTo(new int[] {-4, 5});
     }
 
     @Test
     void noSolutionReturnsEmptyArray() {
         int[] result = twoSum(new int[] {1, 2, 3, 4}, 100);
-        assertArrayEquals(new int[] {}, result);
+        assertThat(result).isEmpty();
     }
 
     @Test
     void twoElementArrayThatMatches() {
         int[] result = twoSum(new int[] {4, 8}, 12);
-        assertArrayEquals(new int[] {4, 8}, result);
+        assertThat(result).isEqualTo(new int[] {4, 8});
     }
 }
