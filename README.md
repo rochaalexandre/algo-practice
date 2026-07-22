@@ -25,6 +25,14 @@ Each exercise is a JUnit test class. The class javadoc documents:
 | Class | Pattern | Complexity |
 |---|---|---|
 | [`TwoSumWithHashMapTest`](src/test/java/org/example/TwoSumWithHashMapTest.java) | Hash map for O(1) lookup instead of nested loop | O(n) time, O(n) space |
+| [`DailyTemperaturesWithStackTest`](src/test/java/org/example/DailyTemperaturesWithStackTest.java) | Monotonic stack — resolves multiple waiting days in one pass | O(n) time, O(n) space |
+| [`TwoSumWithTwoPointersTest`](src/test/java/org/example/TwoSumWithTwoPointersTest.java) | Two pointers on a sorted array, no extra space | O(n) time, O(1) space |
+| [`LongestSubstringWithSlidingWindowTest`](src/test/java/org/example/LongestSubstringWithSlidingWindowTest.java) | Sliding window + hash map, window grows/shrinks by uniqueness | O(n) time, O(n) space |
+| [`MinSubarrayWithSlidingWindowTest`](src/test/java/org/example/MinSubarrayWithSlidingWindowTest.java) | Sliding window, shrinks while sum stays valid | O(n) time, O(1) space |
+| [`MaxSubarraySumWithKadaneTest`](src/test/java/org/example/MaxSubarraySumWithKadaneTest.java) | Kadane's algorithm — greedy running sum, no lookup structure | O(n) time, O(1) space |
+| [`ContainsDuplicateWithHashMapTest`](src/test/java/org/example/ContainsDuplicateWithHashMapTest.java) | Hash map of value → last index, checked against a max distance | O(n) time, O(n) space |
+| [`BinaryTreeLevelOrderWithBFSTest`](src/test/java/org/example/BinaryTreeLevelOrderWithBFSTest.java) | BFS with a queue — level-by-level, left to right | O(n) time, O(w) space |
+| [`MaxDepthBinaryTreeWithBFSTest`](src/test/java/org/example/MaxDepthBinaryTreeWithBFSTest.java) | BFS, processing one full level per outer loop pass | O(n) time, O(w) space |
 
 ## Why this exists
 
